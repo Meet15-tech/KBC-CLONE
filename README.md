@@ -383,17 +383,6 @@ This project demonstrates:
 * Real-Time Leaderboard
 
 ⸻
-
-👨‍💻 Developer
-
-Meet Thakkar
-
-Computer Engineering Student
-
-Python | Django | MERN Stack | Docker | Kubernetes | AI Enthusiast
-
-⸻
-
 🏆 Final Result
 
 A complete recreation of the Kaun Banega Crorepati game available in both Terminal and Web Application formats, demonstrating practical software development skills from core Python programming to full-stack web development.
