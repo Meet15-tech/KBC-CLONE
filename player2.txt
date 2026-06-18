@@ -1,0 +1,4 @@
+Player Number: 2
+Name: ayush
+Age: 21
+City: goa

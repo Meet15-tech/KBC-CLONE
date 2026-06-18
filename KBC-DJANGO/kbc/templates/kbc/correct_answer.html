@@ -1,0 +1,36 @@
+{% extends 'kbc/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<audio autoplay>
+    <source src="{% static 'sounds/kbc-right-answer-new_xPkwRoc.mp3' %}" type="audio/mpeg">
+</audio>
+
+<div class="glass-card correct-page">
+
+    <h1 class="correct-title">
+        ✅ Sahi Jawab!
+    </h1>
+
+    <h2>
+        Computer Ji...
+    </h2>
+
+    <h1 class="correct-amount">
+        Aap jeet chuke hain {{ amount }}
+    </h1>
+
+    <p>
+        Agla prashn screen par dikhaya jaye...
+    </p>
+
+</div>
+
+<script>
+setTimeout(function(){
+    window.location.href = "{% url 'hotseat' %}";
+}, 6000);
+</script>
+
+{% endblock %}

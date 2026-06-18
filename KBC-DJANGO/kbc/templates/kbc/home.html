@@ -1,0 +1,48 @@
+{% extends 'kbc/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<audio id="introMusic">
+    <source src="{% static 'sounds/kbc-intro.mp3' %}" type="audio/mpeg">
+</audio>
+
+<section class="home-hero">
+
+    <div class="hero-image-box">
+        <img src="{% static 'images/ab.jpg' %}" class="amitabh-img">
+    </div>
+
+    <div class="hero-content">
+
+        <img src="{% static 'images/logo.jpg' %}" class="hero-logo">
+
+        <h1>
+            KAUN BANEGA CROREPATI
+        </h1>
+
+        <h2>
+            Win ₹7 Crore
+        </h2>
+
+        <p>
+            Deviyon aur sajjano, swagat hai Kaun Banega Crorepati mein!
+        </p>
+
+        <a href="/register/" class="start-btn" onclick="playIntro()">
+    Start Game
+</a>
+
+    </div>
+
+</section>
+<script>
+
+function playIntro(){
+
+    document.getElementById("introMusic").play();
+
+}
+
+</script>
+{% endblock %}

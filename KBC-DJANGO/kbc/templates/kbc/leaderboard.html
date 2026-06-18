@@ -1,0 +1,77 @@
+{% extends 'kbc/base.html' %}
+
+{% block content %}
+
+<div class="glass-card leaderboard-card">
+
+    <h1 class="leaderboard-title">
+
+        🏆 KBC Hall of Fame 🏆
+
+    </h1>
+
+    <table class="contestant-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Rank</th>
+
+                <th>Player</th>
+
+                <th>Amount Won</th>
+
+                <th>Result</th>
+
+                <th>Date</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for item in history %}
+
+            <tr>
+
+                <td>{{ forloop.counter }}</td>
+
+                <td>{{ item.player.name }}</td>
+
+                <td>{{ item.amount_won }}</td>
+
+                <td>{{ item.result }}</td>
+
+                <td>{{ item.date|date:"d M Y, h:i A" }}</td>
+
+            </tr>
+
+            {% empty %}
+
+            <tr>
+
+                <td colspan="5">No game history yet.</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    <div class="text-center mt-4">
+
+        <a href="{% url 'home' %}" class="start-btn">
+
+            Back To Home
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

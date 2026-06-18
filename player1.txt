@@ -1,0 +1,4 @@
+Player Number: 1
+Name: meet
+Age: 22
+City: abad

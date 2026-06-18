@@ -1,0 +1,62 @@
+{% extends 'kbc/base.html' %}
+
+{% block content %}
+{% load static %}
+
+{% if correct_answer %}
+
+<audio autoplay>
+
+    <source src="{% static 'sounds/kbc-wrong-answer.mp3' %}" type="audio/mpeg">
+
+</audio>
+
+{% endif %}
+
+{% if amount == "₹7 Crore" %}
+<audio autoplay>
+    <source src="{% static 'sounds/7-crore-kbc.mp3' %}" type="audio/mpeg">
+</audio>
+{% endif %}
+
+<div class="winner-page glass-card">
+
+    <h1 class="winner-title">
+        🏆 Game Result 🏆
+    </h1>
+
+    <h2 class="winner-player">
+        {{ player.name }}
+    </h2>
+
+    <p class="winner-text">
+        Aap ghar lekar ja rahe hain
+    </p>
+
+    <h1 class="winner-amount">
+        {{ amount }}
+    </h1>
+
+    {% if correct_answer %}
+
+        <p class="correct-answer-text">
+            Correct Answer Was: {{ correct_answer }}
+        </p>
+
+    {% endif %}
+
+    <div class="winner-buttons">
+
+        <a href="{% url 'register' %}" class="start-btn">
+            Play Again
+        </a>
+
+        <a href="{% url 'leaderboard' %}" class="start-btn">
+            View Leaderboard
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

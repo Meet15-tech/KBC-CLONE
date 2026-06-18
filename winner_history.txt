@@ -1,0 +1,20 @@
+
+====================
+Name: Player Number: 2
+Amount Won: ₹0
+Result: Lost
+
+====================
+Name: Player Number: 1
+Amount Won: ₹10,000
+Result: Lost
+
+====================
+Name: Player Number: 2
+Amount Won: ₹10,000
+Result: Lost
+
+====================
+Name: ayush
+Amount Won: ₹10,000
+Result: Wrong Answer

@@ -1,0 +1,124 @@
+{% extends 'kbc/base.html' %}
+
+{% block content %}
+
+<div class="glass-card fff-card">
+
+    <h2>Fastest Finger First</h2>
+
+    {% if question %}
+
+    <div class="question-box">
+        <h3>{{ question.question }}</h3>
+
+        <div class="fff-options-display">
+            <p>A. {{ question.option_a }}</p>
+            <p>B. {{ question.option_b }}</p>
+            <p>C. {{ question.option_c }}</p>
+            <p>D. {{ question.option_d }}</p>
+        </div>
+    </div>
+
+    <form method="POST" id="fffForm">
+        {% csrf_token %}
+
+        <input type="hidden" name="question_id" value="{{ question.id }}">
+
+        {% for player in players %}
+
+        <div class="player-turn-card {% if not forloop.first %}hidden-player{% endif %}" id="playerCard{{ forloop.counter }}">
+
+            <h3>{{ player.name }}, aapka jawab dijiye</h3>
+
+            <div class="timer-box">
+                Time: <span id="timer{{ forloop.counter }}">0.00</span> seconds
+            </div>
+
+            <input type="hidden" name="answer_{{ player.id }}" id="answer_{{ player.id }}">
+            <input type="hidden" name="time_{{ player.id }}" id="time_{{ player.id }}">
+
+            <div class="player-options">
+                <button type="button" onclick="lockAnswer('{{ player.id }}', '{{ forloop.counter }}', 'A', this)">A</button>
+                <button type="button" onclick="lockAnswer('{{ player.id }}', '{{ forloop.counter }}', 'B', this)">B</button>
+                <button type="button" onclick="lockAnswer('{{ player.id }}', '{{ forloop.counter }}', 'C', this)">C</button>
+                <button type="button" onclick="lockAnswer('{{ player.id }}', '{{ forloop.counter }}', 'D', this)">D</button>
+            </div>
+
+            <p class="locked-text" id="lockedText{{ forloop.counter }}"></p>
+
+        </div>
+
+        {% endfor %}
+
+        <button type="submit" class="register-btn mt-4" id="submitBtn" style="display:none;">
+            Computer Ji, Sabhi Jawab Lock Kijiye
+        </button>
+
+    </form>
+
+    {% else %}
+
+    <h3>No questions found in database.</h3>
+
+    {% endif %}
+
+</div>
+
+<script>
+let currentPlayer = 1;
+let totalPlayers = {{ players|length }};
+let startTime = Date.now();
+let timerInterval;
+
+function startTimer(playerNumber){
+    startTime = Date.now();
+
+    timerInterval = setInterval(function(){
+        let now = Date.now();
+        let time = ((now - startTime) / 1000).toFixed(2);
+        document.getElementById("timer" + playerNumber).innerHTML = time;
+    }, 50);
+}
+
+function lockAnswer(playerId, playerNumber, answer, btn){
+    clearInterval(timerInterval);
+
+    let endTime = Date.now();
+    let responseTime = ((endTime - startTime) / 1000).toFixed(2);
+
+    document.getElementById("answer_" + playerId).value = answer;
+    document.getElementById("time_" + playerId).value = responseTime;
+
+    let parent = btn.parentElement;
+    let buttons = parent.querySelectorAll("button");
+
+    buttons.forEach(function(button){
+        button.disabled = true;
+        button.classList.remove("selected-option");
+    });
+
+    btn.classList.add("selected-option");
+
+    document.getElementById("lockedText" + playerNumber).innerHTML =
+        "Answer locked: " + answer + " | Time: " + responseTime + " seconds";
+
+    setTimeout(function(){
+        document.getElementById("playerCard" + playerNumber).style.display = "none";
+
+        currentPlayer++;
+
+        if(currentPlayer <= totalPlayers){
+            document.getElementById("playerCard" + currentPlayer).style.display = "block";
+            startTimer(currentPlayer);
+        }
+        else{
+            document.getElementById("submitBtn").style.display = "block";
+        }
+
+    }, 1200);
+}
+
+startTimer(1);
+</script>
+
+{% endblock %}

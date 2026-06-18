@@ -1,0 +1,95 @@
+{% extends 'kbc/base.html' %}
+
+{% block content %}
+
+<div class="result-container">
+
+    <div class="glass-card result-card">
+
+        <h1 class="result-title">
+            Fastest Finger First Result
+        </h1>
+
+        <div class="computer-ji">
+            Computer Ji... Sabhi Jawab Lock Kiye Jaaye!
+        </div>
+
+        <div class="answers-section">
+
+            {% for result in results %}
+
+            <div class="answer-row">
+
+                <div class="player-name">
+                    {{ result.player.name }}
+                </div>
+
+                <div class="player-answer">
+                    Answer: {{ result.answer }}
+                </div>
+
+                <div class="player-status">
+                    {% if result.is_correct %}
+                        ✅ Correct
+                    {% else %}
+                        ❌ Wrong
+                    {% endif %}
+                </div>
+
+                <div class="player-time">
+                    {{ result.response_time }} sec
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% if winner %}
+
+        <div class="winner-section">
+
+            <h2>
+                Sabse Tez Sahi Jawab Diya Hai...
+            </h2>
+
+            <h1 class="winner-name">
+                🏆 {{ winner.player.name }}
+            </h1>
+
+            <h3>
+                🎉 Congratulations 🎉
+            </h3>
+
+            <h2>
+                You Are On The Hot Seat!
+            </h2>
+
+            <a href="{% url 'start_hotseat_game' %}" class="start-btn">
+                Proceed To Hot Seat
+            </a>
+
+        </div>
+
+        {% else %}
+
+        <div class="winner-section">
+
+            <h2>
+                Koi bhi contestant sahi jawab nahi de paya.
+            </h2>
+
+            <a href="{% url 'fastest_finger' %}" class="start-btn">
+                Play Again
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,192 @@
+{% extends 'kbc/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<audio id="questionSound" autoplay>
+    <source src="{% static 'sounds/kbc-question.mp3' %}" type="audio/mpeg">
+</audio>
+
+<audio id="clockSound" loop>
+    <source src="{% static 'sounds/clock.mp3' %}" type="audio/mpeg">
+</audio>
+
+<div class="kbc-game-layout">
+
+    <div class="kbc-main-panel">
+
+        <div class="hotseat-top">
+            <div>
+                <p class="contestant-name">Contestant: {{ player.name }}</p>
+                <p class="question-prize">Question {{ question_number }} for {{ current_prize }}</p>
+            </div>
+
+            <div class="timer-circle">
+                <span id="timer">30</span>
+            </div>
+        </div>
+
+        <h1 class="hotseat-title">🔥 HOT SEAT 🔥</h1>
+
+        <div class="kbc-question-box">
+            Q{{ question_number }}. {{ question.question }}
+        </div>
+
+        <form method="POST" id="answerForm">
+            {% csrf_token %}
+
+            <input type="hidden" name="action" value="answer">
+            <input type="hidden" name="answer" id="selectedAnswer">
+
+            <div class="kbc-options-grid">
+
+                {% if "A" not in hidden_options %}
+                <button type="button" onclick="selectAnswer('A', this)">
+                    <span>A</span> {{ question.option_a }}
+                </button>
+                {% endif %}
+
+                {% if "B" not in hidden_options %}
+                <button type="button" onclick="selectAnswer('B', this)">
+                    <span>B</span> {{ question.option_b }}
+                </button>
+                {% endif %}
+
+                {% if "C" not in hidden_options %}
+                <button type="button" onclick="selectAnswer('C', this)">
+                    <span>C</span> {{ question.option_c }}
+                </button>
+                {% endif %}
+
+                {% if "D" not in hidden_options %}
+                <button type="button" onclick="selectAnswer('D', this)">
+                    <span>D</span> {{ question.option_d }}
+                </button>
+                {% endif %}
+
+            </div>
+
+            <button type="submit" class="lock-answer-btn">
+                Computer Ji, Lock Kiya Jaye
+            </button>
+        </form>
+
+        <div class="lifeline-row">
+
+            <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="fifty">
+                <button class="lifeline-btn" {% if fifty_used %}disabled{% endif %}>
+                    50:50
+                </button>
+            </form>
+
+            <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="audience">
+                <button class="lifeline-btn" {% if audience_used %}disabled{% endif %}>
+                    Audience Poll
+                </button>
+            </form>
+
+            <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="quit">
+                <button class="quit-btn">
+                    Quit Game
+                </button>
+            </form>
+
+        </div>
+
+        {% if votes %}
+        <div class="audience-result">
+            <h3>Audience Poll</h3>
+            <p>A: {{ votes.A }}%</p>
+            <p>B: {{ votes.B }}%</p>
+            <p>C: {{ votes.C }}%</p>
+            <p>D: {{ votes.D }}%</p>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <div class="kbc-prize-panel">
+
+        <h2>Prize Ladder</h2>
+
+        {% for amount in money reversed %}
+            <div class="prize-step {% if amount == current_prize %}active-prize{% endif %}">
+                {{ amount }}
+            </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<script>
+let selected = "";
+
+function selectAnswer(answer, btn){
+    selected = answer;
+    document.getElementById("selectedAnswer").value = answer;
+
+    let buttons = document.querySelectorAll(".kbc-options-grid button");
+
+    buttons.forEach(function(button){
+        button.classList.remove("selected-hotseat-option");
+    });
+
+    btn.classList.add("selected-hotseat-option");
+}
+
+document.getElementById("answerForm").addEventListener("submit", function(e){
+    if(selected === ""){
+        e.preventDefault();
+        alert("Please select an answer first!");
+    }
+});
+
+let questionNumber = {{ question_number }};
+let timeLeft;
+
+if(questionNumber <= 5){
+    timeLeft = 30;
+}
+else if(questionNumber <= 14){
+    timeLeft = 60;
+}
+else{
+    timeLeft = 0;
+}
+
+let timerDisplay = document.getElementById("timer");
+let clockSound = document.getElementById("clockSound");
+
+if(timeLeft === 0){
+    timerDisplay.innerHTML = "∞";
+}
+else{
+    timerDisplay.innerHTML = timeLeft;
+
+    setTimeout(function(){
+        clockSound.play().catch(function(error){
+            console.log("Clock sound blocked by browser");
+        });
+    }, 500);
+
+    let timer = setInterval(function(){
+        timeLeft--;
+        timerDisplay.innerHTML = timeLeft;
+
+        if(timeLeft <= 0){
+            clearInterval(timer);
+            clockSound.pause();
+            document.getElementById("answerForm").submit();
+        }
+    }, 1000);
+}
+</script>
+
+{% endblock %}

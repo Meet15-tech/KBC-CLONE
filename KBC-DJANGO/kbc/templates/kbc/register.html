@@ -1,0 +1,68 @@
+{% extends 'kbc/base.html' %}
+{% load static %}
+{{  }}
+{% block content %}
+{% load static %}
+
+<audio autoplay>
+    <source src="{% static 'sounds/kbc-intro.mp3' %}" type="audio/mpeg">
+</audio>
+<div class="registration-layout">
+
+    <div class="glass-card register-card">
+
+        <h2>Contestant Registration</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="register-btn">
+                Register
+            </button>
+        </form>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'fastest_finger' %}" class="start-btn">
+                Start Fastest Finger First
+            </a>
+        </div>
+
+    </div>
+
+    <div class="glass-card contestants-card">
+
+        <h2>Registered Contestants</h2>
+
+        <table class="contestant-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for player in players %}
+                <tr>
+                    <td>{{ player.name }}</td>
+                    <td>{{ player.age }}</td>
+                    <td>{{ player.city }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">
+                        No contestants registered yet.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

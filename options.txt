@@ -1,0 +1,100 @@
+A. Mumbai | B. Delhi | C. Kolkata | D. Chennai
+A. 5 | B. 6 | C. 7 | D. 8
+A. Tiger | B. Lion | C. Elephant | D. Leopard
+A. Peacock | B. Sparrow | C. Eagle | D. Parrot
+A. 364 | B. 365 | C. 366 | D. 367
+A. Venus | B. Mars | C. Jupiter | D. Saturn
+A. H2O | B. CO2 | C. O2 | D. NaCl
+A. Oxygen | B. Nitrogen | C. Carbon Dioxide | D. Hydrogen
+A. Lungs | B. Brain | C. Heart | D. Liver
+A. 6 | B. 7 | C. 8 | D. 9
+A. Tiger | B. Lion | C. Elephant | D. Horse
+A. Vitamin A | B. Vitamin B | C. Vitamin C | D. Vitamin D
+A. 12 | B. 18 | C. 24 | D. 36
+A. 0°C | B. 10°C | C. 50°C | D. 100°C
+A. Thermometer | B. Barometer | C. Telescope | D. Microscope
+A. Indian Ocean | B. Atlantic Ocean | C. Arctic Ocean | D. Pacific Ocean
+A. Italy | B. Germany | C. France | D. Spain
+A. Yen | B. Dollar | C. Rupee | D. Euro
+A. Mercury | B. Venus | C. Earth | D. Mars
+A. Alexander Graham Bell | B. Thomas Edison | C. Nikola Tesla | D. Isaac Newton
+A. James Gosling | B. Guido van Rossum | C. Dennis Ritchie | D. Bjarne Stroustrup
+A. Lion | B. Tiger | C. Cheetah | D. Horse
+A. Rabindranath Tagore | B. Mahatma Gandhi | C. Bankim Chandra Chatterjee | D. Sarojini Naidu
+A. Python | B. HTML | C. Java | D. C++
+A. Africa | B. Europe | C. Asia | D. Australia
+A. Sahara Desert | B. Gobi Desert | C. Arabian Desert | D. Kalahari Desert
+A. Amazon River | B. Nile River | C. Ganges River | D. Yangtze River
+A. Charles Babbage | B. Alan Turing | C. Bill Gates | D. Steve Jobs
+A. India | B. USA | C. China | D. Russia
+A. 90°C | B. 100°C | C. 110°C | D. 120°C
+A. Earth | B. Mars | C. Saturn | D. Venus
+A. Microscope | B. Telescope | C. Thermometer | D. Barometer
+A. 9 | B. 10 | C. 11 | D. 12
+A. Sydney | B. Melbourne | C. Canberra | D. Perth
+A. Iron | B. Mercury | C. Gold | D. Silver
+A. William Shakespeare | B. Charles Dickens | C. Leo Tolstoy | D. Mark Twain
+A. Europe | B. Africa | C. Asia | D. Antarctica
+A. Tiger | B. Lion | C. Elephant | D. Leopard
+A. A+ | B. B+ | C. AB+ | D. O-
+A. Heart | B. Liver | C. Skin | D. Brain
+A. Mercury | B. Venus | C. Earth | D. Mars
+A. Germany | B. France | C. England | D. Canada
+A. Gold | B. Diamond | C. Iron | D. Platinum
+A. Isaac Newton | B. Albert Einstein | C. Galileo Galilei | D. Nikola Tesla
+A. Asia | B. Australia | C. Europe | D. Antarctica
+A. Dollar | B. Pound Sterling | C. Euro | D. Yen
+A. Oxygen | B. Nitrogen | C. Carbon Dioxide | D. Hydrogen
+A. Homi Bhabha | B. Vikram Sarabhai | C. A.P.J. Abdul Kalam | D. C.V. Raman
+A. 3 × 10⁸ m/s | B. 3 × 10⁶ m/s | C. 3 × 10⁴ m/s | D. 3 × 10² m/s
+A. USA | B. China | C. Russia | D. Canada
+A. Leonardo da Vinci | B. Pablo Picasso | C. Vincent van Gogh | D. Michelangelo
+A. Hockey | B. Cricket | C. Football | D. Kabaddi
+A. 206 | B. 208 | C. 210 | D. 212
+A. Mars | B. Earth | C. Neptune | D. Jupiter
+A. Central Processing Unit | B. Computer Processing Unit | C. Central Program Unit | D. Control Processing Unit
+A. Jawaharlal Nehru | B. Rajendra Prasad | C. Sardar Patel | D. B.R. Ambedkar
+A. Femur | B. Tibia | C. Humerus | D. Fibula
+A. Yen | B. Dollar | C. Yuan | D. Won
+A. Oxygen | B. Carbon Dioxide | C. Nitrogen | D. Hydrogen
+A. Thomas Edison | B. Nikola Tesla | C. Alexander Graham Bell | D. James Watt
+A. Jaipur | B. Jodhpur | C. Udaipur | D. Delhi
+A. Greenland | B. Madagascar | C. Australia | D. Borneo
+A. Toronto | B. Ottawa | C. Vancouver | D. Montreal
+A. Silver | B. Gold | C. Iron | D. Copper
+A. Valmiki | B. Tulsidas | C. Ved Vyasa | D. Kalidasa
+A. 28 | B. 29 | C. 30 | D. 31
+A. Parrot | B. Crow | C. Eagle | D. Sparrow
+A. Pacific Ocean | B. Atlantic Ocean | C. Indian Ocean | D. Arctic Ocean
+A. Newton | B. Joule | C. Watt | D. Pascal
+A. Saturn | B. Jupiter | C. Mars | D. Neptune
+A. Mahatma Gandhi | B. Subhash Chandra Bose | C. Jawaharlal Nehru | D. Bhagat Singh
+A. Stem | B. Leaf | C. Root | D. Flower
+A. 32°F | B. 0°F | C. 100°F | D. 212°F
+A. Generator | B. Motor | C. Transformer | D. Battery
+A. China | B. Japan | C. Thailand | D. Korea
+A. Tim Berners-Lee | B. Bill Gates | C. Steve Jobs | D. Mark Zuckerberg
+A. Oxygen | B. Hydrogen | C. Helium | D. Nitrogen
+A. Asia | B. Africa | C. Europe | D. Australia
+A. Rio de Janeiro | B. Sao Paulo | C. Brasilia | D. Salvador
+A. Barometer | B. Seismograph | C. Thermometer | D. Telescope
+A. Alexander Fleming | B. Louis Pasteur | C. Marie Curie | D. Isaac Newton
+A. 7 | B. 8 | C. 9 | D. 10
+A. India | B. Japan | C. China | D. South Korea
+A. Enamel | B. Bone | C. Nail | D. Hair
+A. Mount Everest | B. Olympus Mons | C. Mount Fuji | D. Mauna Loa
+A. Geology | B. Seismology | C. Astronomy | D. Meteorology
+A. J.R.R. Tolkien | B. J.K. Rowling | C. George Orwell | D. Agatha Christie
+A. Red Blood Cells | B. White Blood Cells | C. Platelets | D. Plasma
+A. Lake Victoria | B. Lake Superior | C. Lake Baikal | D. Caspian Sea
+A. Russia | B. USA | C. France | D. China
+A. Sputnik 1 | B. Apollo 11 | C. Voyager 1 | D. Explorer 1
+A. Isaac Newton | B. Pierre de Fermat | C. Euclid | D. Carl Gauss
+A. Ethiopia | B. Egypt | C. Sudan | D. Libya
+A. Siemens | B. Ohm | C. Henry | D. Farad
+A. Tungsten | B. Iron | C. Platinum | D. Titanium
+A. Mariana Trench | B. Challenger Deep | C. Java Trench | D. Tonga Trench
+A. Mozart | B. Beethoven | C. Antonio Vivaldi | D. Bach
+A. Roman | B. Greek | C. Inca | D. Egyptian
+A. Standard Query Language | B. Structured Query Language | C. Simple Question Language | D. System Query Logic
+A. Albert Einstein | B. Niels Bohr | C. Werner Heisenberg | D. Max Planck
